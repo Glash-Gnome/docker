@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  nginx:
+    build:
+      context: .
+      args:
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
+    ports:
+      - 80:8080
