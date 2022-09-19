@@ -2,8 +2,17 @@
 
 all: build create start exec stop rm rmi
 
+compose:
+	@set -x; \
+	USER_ID=$(shell id -u) \
+	GROUP_ID=$(shell id -g) \
+	docker-compose build
+	@set -x; docker-compose up
+	@set -x; docker-compose down
+
 build:
-	@set -x; docker build \
+	@set -x; \
+	docker build \
 	  --file ./Dockerfile \
 	  --tag spa-image \
 	  --build-arg USER_ID=$(shell id -u) \
@@ -11,7 +20,8 @@ build:
 	  .
 
 create:
-	@set -x; docker container create \
+	@set -x; \
+	docker container create \
 	  --name spa-container_1 \
 	  spa-image:latest
 
