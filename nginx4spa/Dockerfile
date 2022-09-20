@@ -11,4 +11,4 @@ RUN chown -R nginx:nginx /usr/share/nginx/html && chmod -R 755 /usr/share/nginx/
         touch /var/run/nginx.pid && \
         chown -R nginx:nginx /var/run/nginx.pid
 
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
