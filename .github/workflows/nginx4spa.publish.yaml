@@ -2,7 +2,8 @@ name: Publish nginx4spa (main) Docker image
 on:
   push:
     branches:
-      - maine_et_loire
+      - main
+      - e_et_loire
 concurrency:
   cancel-in-progress: true
   group: "nginx4spa-${{ github.ref }}"
